@@ -1,0 +1,98 @@
+/* WHITE GRADIENT */
+.white-Gradient{
+    background-color: white;
+}
+.white-Gradient .Login-Text p{
+    font-family: TahomaBold;
+    font-size:27px;
+}
+
+.white-Gradient .Login-to-access-Text p{
+    font-family: TahomaRegular;
+    font-size:19px;
+    color: #777676;
+}
+
+.white-Gradient .keepMeLogin input.largerCheckbox{
+    height: 21px !important;
+    width: 21px !important;
+}
+
+
+.white-Gradient .keepMeLogin label{
+    font-family: TahomaRegular;
+    font-size:16px;
+    color: #42425B;
+}
+
+.white-Gradient .username-input input{
+    font-family: TahomaRegular;
+    font-size:18px;
+    color: #787878;
+}
+
+.white-Gradient .username-input .fa{
+    position: absolute;
+    top: 8px;
+    right: 46px;
+    font-size: 22px;
+    color: #CBCBCB;
+}
+
+.white-Gradient .buttonSignIn button{
+    color:white;
+    font-family: TahomaBold;
+    font-size:19px;
+    background-color:#0151CB;
+}
+.white-Gradient .row .d-flex .lastPassword{
+    font-family: TahomaRegular;
+    font-size:19px;
+    color: #787878;
+    text-decoration: none;
+}
+
+.white-Gradient .row .d-flex p{
+    font-family: TahomaRegular;
+    font-size:19px;
+    color: #787878;
+}
+
+.white-Gradient .row .d-flex p a{
+    text-decoration: underline;
+}
+.white-Gradient .buttonfacebook button{
+    color:white;
+    font-family: TahomaRegular;
+    font-size:20px;
+    background-color:#3B5998;
+    border-radius: unset;
+    border-color: #007bff00;
+}
+.white-Gradient .buttontwitter button{
+    color:white;
+    font-family: TahomaRegular;
+    font-size:20px;
+    background-color:#4285F4;
+    border-radius: unset;
+    border-color: #007bff00;
+}
+
+.white-Gradient .buttonfacebook i{
+    font-size:27px;
+}
+.white-Gradient .buttontwitter i{
+    font-size:27px;
+}
+
+.white-Gradient .buttonSignIn button{
+    color:white;
+    font-family: TahomaBold;
+    font-size:22px;
+    background-color:#0151CB;
+}
+/* WHITE GRADIENT */
+
+@media only screen and (max-width: 767px) {
+	
+}

@@ -1,0 +1,167 @@
+/* GRAY GRADIENT */
+.gray-Gradient .light{
+    background-color:#EEEFED;
+    padding-left: 12rem!important;
+}
+.gray-Gradient .light span.first{
+    font-family:TahomaBold;
+    color:#040404;
+    font-size: 28px;
+}
+.gray-Gradient .light span.second-b{
+    font-family:TahomaRegular;
+    color:#000000;
+    font-size: 18px;
+}
+.gray-Gradient .light .third-b{
+    font-family:TahomaRegular;
+    color:#000000 !important;
+    font-size: 18px;
+    text-decoration:underline !important;
+}
+.gray-Gradient .light span.second{
+    font-family:TahomaBold;
+    color:#290A6B;
+    font-size: 18px;
+}
+.gray-Gradient .dark{
+    background-color:#D0D1CF;
+    padding-left: 9rem!important;
+    padding-top: 102px !important;
+}
+.gray-Gradient .dark span.first{
+    display:none;
+}
+.gray-Gradient .dark span.second-b{
+    font-family:TahomaRegular;
+    color:#000000;
+    font-size: 18px;
+}
+.gray-Gradient .dark .third-b{
+    font-family:TahomaRegular;
+    color:#000000;
+    font-size: 18px;
+}
+.gray-Gradient .dark span.second{
+    font-family:TahomaBold;
+    color:#290A6B;
+    font-size: 18px;
+}
+/* GRAY GRADIENT */
+
+/* WHITE GRADIENT */
+.white-Gradient{
+    background-color: white;
+}
+.white-Gradient .row1{
+    font-family:TahomaBold;
+    color:#040404;
+    font-size: 28px;
+}
+.white-Gradient .row2 input{
+    border-radius: 28px;
+    text-align: center!important;
+    font-family:TahomaRegular;
+    color:#040404;
+}
+.white-Gradient .legalNotice-p .first-bold{
+    font-size: 16px;
+    font-family:TahomaBold;
+    color:#2B0D6D;
+}
+.white-Gradient .legalNotice-p .first-bold span,.white-Gradient .legalNotice-p .first{
+    font-size: 16px;
+    font-family:TahomaRegular;
+    color:#040404;
+}
+.white-Gradient .legalNotice-checkbox input.largerCheckbox{
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.white-Gradient .legalNotice-checkbox label{
+    font-family: TahomaRegular;
+    font-size:16px;
+    color:#040404;
+}
+.white-Gradient .legalNotice-checkbox label a{
+    color:#040404 !important;
+    text-decoration: underline;
+}
+
+.white-Gradient .legalNotice-button button.submit-offer{
+    font-family:TahomaBold;
+    background-color:#290A6B;
+    font-size: 22px;
+    border-radius: 28px;
+    border: unset;
+}
+
+.white-Gradient .description-p .heading{
+    font-family:TahomaBold;
+    color:#040404;
+    font-size: 26px;
+    border-bottom: 1px solid #290A6B;
+    text-align: left;
+}
+.white-Gradient .description-p .heading2{
+    font-family:TahomaBold;
+    color:#040404;
+    font-size: 28px;
+    border-bottom: 1px solid #290A6B;
+    text-align: left;
+}
+.white-Gradient .description-p .first{
+    font-size: 15px;
+    font-family:TahomaRegular;
+    color:#040404;
+    text-align: left;
+}
+.white-Gradient .description-p .second{
+    font-size: 15px;
+    font-family:TahomaBold;
+    color:#040404;
+    text-align: left;
+}
+.white-Gradient .description-p .second span.sub-text{
+    font-size: 15px;
+    font-family:TahomaRegular;
+    color:#040404;
+    text-align: left;
+}
+.white-Gradient .carousel2 .heading{
+    font-family:TahomaBold;
+    color:#040404;
+    font-size: 28px;
+    text-align: left;
+}
+/* WHITE GRADIENT */
+
+
+/* BLUE SMALL GRADIENT GRADIENT */
+.blue-small-gradient{
+    background-image: linear-gradient(to right, #2A0E8F , #261596,#1E22A1,#034CC7,#034CC7);
+}
+.blue-small-gradient .seller-detail{
+    padding-left: 8rem!important;
+}
+.blue-small-gradient .send-message{
+    padding-right: 12rem!important;
+}
+.blue-small-gradient .send-message .send-message-button{
+    font-family:TahomaBold;
+    background-color:#B726A7;
+    font-size: 18px;
+    border-radius: 28px;
+    border: unset;
+}
+.blue-small-gradient .seller-detail p.heading{
+    font-family:TahomaBold;
+    font-size: 25px;
+}
+.blue-small-gradient .seller-detail p.subText{
+    font-family:TahomaRegular;
+    font-size: 14px;
+    margin-bottom:0px;
+}
+/* BLUE SMALL GRADIENT GRADIENT */

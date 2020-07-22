@@ -1,0 +1,37 @@
+/* WHITE GRADIENT */
+.gray-Gradient{
+    background-color: #F4F4F4;
+}
+.white-Gradient{
+    background-color: white;
+}
+/* WHITE GRADIENT */
+
+img{
+	max-width: 100% !important;
+	/* max-height: 100% !important; */
+}
+
+.font-500{
+	font-weight:500;
+}
+
+.profile-title h3{
+	display:inline-block;
+}
+.profile-title h3.username{
+	color: #4d525b;
+	font-weight:300;
+}
+
+.paragraph{
+	color:#0e1724;
+	font-size:16px;
+	font-weight:500;
+}
+.listing-count{
+	color:#5dc26a !important;
+}
+h3.name{
+	text-transform:capitalize;
+}

@@ -1,0 +1,54 @@
+/* WHITE GRADIENT */
+.gray-Gradient{
+    background-color: #F4F4F4;
+}
+.white-Gradient{
+    background-color: white;
+}
+
+.white-Gradient .username-input input,.white-Gradient .username-input select,.white-Gradient .username-input textarea{
+    font-family: TahomaRegular;
+    font-size: 18px;
+    color: #282828;
+    background-color: #F4F8F9;
+    border: unset;
+    width: 100%;
+}
+.white-Gradient .username-input input.input-label{
+    font-family: TahomaRegular;
+    font-size: 18px;
+    color: #6F6CCE;
+    float: left;
+}
+
+.white-Gradient .label1{
+    font-family: TahomaRegular;
+    font-size: 18px;
+    color: #282828;
+    float: left;
+}
+.white-Gradient .label1 label{
+    float: left;
+}
+.white-Gradient .label1 .span{
+    font-size: 18px;
+    color: red !important;
+}
+.white-Gradient .add_extension_text{
+    font-family: TahomaBold !important;
+    font-size: 20px;
+    color:#3E3E3E;
+    text-align: center;
+}
+.white-Gradient .button-next button{
+    color:white;
+    font-family: TahomaRegular;
+    font-size:16px;
+    background-color:#201F9F;
+    text-align: center;
+    border-radius: 1px;
+}
+.white-Gradient .button-next{
+    text-align: center;
+}
+/* WHITE GRADIENT */

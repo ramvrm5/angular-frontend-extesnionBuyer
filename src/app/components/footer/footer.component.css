@@ -1,0 +1,97 @@
+/* BACK GRADIENT */
+.black-gradient{
+    background-color: #12101E;
+}
+
+.black-gradient .row .aristaAlertnate{
+    font-family:Arista20Alternate !important;
+    font-size: 38px;
+    color: #B726A7;
+}
+
+.black-gradient .row .aristaLight{
+    font-family:Arista20light !important;
+    font-size: 38px;
+    color: white;
+    margin-top: -29px;
+    margin-bottom: 25px;
+}
+
+.black-gradient .row .regular-tt{
+    font-family:TahomaRegular;
+    font-size: 14px;
+    color: white;
+}
+
+.black-gradient .row .col1-p2{
+    margin-top: -18px;
+}
+
+.black-gradient .row .col1-p3{
+    margin-top: -18px;
+}
+
+.black-gradient .row .col1-p4{
+    margin-top: -18px;
+    margin-bottom: 25px;
+}
+
+.black-gradient .row .col1-p6{
+    margin-top: -18px;
+}
+
+.black-gradient .row .TahomaBold{
+    font-family:TahomaBold !important;
+    font-size:18px;
+    color: white;
+}
+
+.black-gradient .row .regular-tt2{
+    font-family:TahomaRegular;
+    font-size: 16px;
+    color: white;
+}
+
+.black-gradient .row .regular-tt3{
+    font-family:TahomaRegular;
+    font-size: 16px;
+    color: white;
+}
+
+.black-gradient .row .col4-p2{
+    margin-top: -18px;
+}
+
+.black-gradient .row2-mt-5 hr{
+    border-top: 5px solid #1D1A2E;
+    width: 100%;
+}
+
+.black-gradient .row2-mt-5 p{  
+     font-family:TahomaRegular;
+    font-size: 17px;
+    color: #6C6C6F;
+}
+/* BACK GRADIENT */
+
+@media only screen and (max-width: 767px) {
+	.footer-container .col-sm-6{
+		padding-left:6rem;
+	}
+}
+@media only screen and (max-width: 991px) {
+	.footer-container{
+		margin-top:2rem !important;
+		/* text-align:center; */
+	}	
+}
+
+ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+ul a{
+	color:#FFFFFF;
+	font-size:14px;	
+}

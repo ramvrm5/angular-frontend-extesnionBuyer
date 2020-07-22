@@ -1,0 +1,76 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-square-spin" [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<div *ngIf="homeRoute" class="row row1-vh-50 blue-Gradient">
+  <div class="col-lg-9 mx-auto">
+    <app-navigation></app-navigation>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 explore-extension-text">
+        <p class="first mt-3 pt-3 mb-0">Explore browser</p>
+        <p class="first1 mb-0 mt-n4">extensions online</p>
+        <p class="second mb-0">#1 platform to buy and sell browser</p>
+        <span class="second">extensions online</span>
+      </div>
+      <div class="col-lg-6 col-md-6 image1">
+        <img class="mr-2 no-groups-img" src="assets/images/computer1.png" />
+      </div>
+    </div>
+    <div class="row mt-n5 mb-3 pb-5">
+      <div class="col-lg-6 col-md-6 serchBar">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input (keyup.enter)="getValue()" type="text" id="myInput" placeholder="Search for Extensions" name="search" [(ngModel)]="search" aria-label="Search">
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="loginRoute" class="row row1-vh-50 blue-Gradient-login">
+  <div class="col-lg-9 mx-auto mb-5">
+    <app-navigation></app-navigation>
+    <div class="row">
+      <div class="col-lg-12 col-md-6 image1 text-center">
+        <img class="mr-2 no-groups-img login-banner" src="assets/images/loginScrenImage2.png" />
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="listingnRoute" class="row row1-vh-50 blue-Gradient-listing">
+  <div class="col-lg-9 mx-auto p-0" *ngIf="!tokenBollean">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="col-lg-12 mx-auto p-0" *ngIf="tokenBollean">
+    <app-navigationbar></app-navigationbar>
+  </div>
+  <div class="col-lg-9 mx-auto mb-5">
+    <div class="row mt-5">
+      <div class="col-lg-12 col-md-12 chromeExtension-text text-white text-center">
+        <span style="text-decoration:underline;">{{product_type}} Extension </span>
+        <span *ngIf="visiblity" class="">-{{product_name}}</span>
+        <span *ngIf="!visiblity" class="">-Private Listing</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 myTravel-planner text-white text-center">
+        <span *ngIf="visiblity" class="">{{product_name}}</span>
+        <span *ngIf="!visiblity" class="">Private Listing</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 button text-center">
+        <a [href]="store_url" *ngIf="visiblity" target="_blank"><button
+            class="btn btn-primary btn-lg view-in-store m-3">View In Store</button></a>
+        <a [href]="store_url" *ngIf="!visiblity" target="_blank"><button
+            class="btn btn-primary btn-lg view-in-store m-3">Ask To View Details</button></a>
+        <a [href]="store_url" target="_blank"><button class="btn btn-primary btn-lg message-seller m-3">Message
+            Seller</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="catlistRoute" class="row row1-vh-50 blue-Gradient-catList">
+  <div class="col-lg-10 mx-auto mb-5" *ngIf="!tokenBollean">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="col-lg-12 mx-auto mb-5 p-0" *ngIf="tokenBollean">
+    <app-navigationbar></app-navigationbar>
+  </div>
+</div>

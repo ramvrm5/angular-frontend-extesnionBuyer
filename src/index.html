@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style>
+    /* Scroll */
+    div .ui-dialog-content.ui-widget-content {
+      overflow-x: hidden;
+    }
+
+    div .ui-dialog-content.ui-widget-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    /* Track */
+    div .ui-dialog-content.ui-widget-content::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+    /* Handle */
+    div .ui-dialog-content.ui-widget-content::-webkit-scrollbar-thumb {
+      background: #0b028ea3;
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    div .ui-dialog-content.ui-widget-content::-webkit-scrollbar-thumb:hover {
+      background: #b30000;
+    }
+
+    /* Scroll */
+    ngx-select-dropdown .ngx-dropdown-container button.ngx-dropdown-button {
+      background-color: #f4f8f9 !important;
+      border: unset !important;
+      font-family: TahomaRegular;
+      font-size: 18px;
+      color: #282828 !important;
+    }
+
+    ngx-select-dropdown .ngx-dropdown-container button.ngx-dropdown-button span.nsdicon-angle-down {
+      top: 5px !important;
+    }
+
+    ul.available-items {
+      max-height: 132px !important;
+    }
+
+    ngx-select-dropdown .ngx-dropdown-container button.ngx-dropdown-button.disabled {
+      color: #cecece !important;
+      cursor: not-allowed !important;
+    }
+
+    /* STEP WIZARD */
+    .ui-steps:before {
+      content: " ";
+      border-top: 3px solid #260F6A !important;
+      width: 100%;
+      top: 45%;
+      left: 0;
+      display: block;
+      position: absolute;
+    }
+
+    .ui-steps .ui-steps-item.ui-state-highlight.ui-steps-current .ui-steps-number {
+      background: #20209C !important;
+      color: #ffffff;
+      font-weight: 900 !important;
+    }
+
+    body .ui-steps .ui-steps-item.ui-state-default.ng-star-inserted .ui-menuitem-link .ui-steps-title {
+      font-family: TahomaBold !important;
+      font-size: 14px;
+      color: #3E3E3E;
+    }
+
+    body .ui-steps .ui-steps-item.ui-state-highlight.ui-steps-current .ui-menuitem-link .ui-steps-title {
+      font-family: TahomaBold !important;
+      font-size: 14px;
+      color: #3E3E3E;
+    }
+
+    body .ui-steps .ui-steps-item.ui-state-default.ng-star-inserted .ui-menuitem-link .ui-steps-number {
+      border-radius: 50%;
+      display: inline-block;
+      color: #25136A !important;
+      background-color: #DEDEDD !important;
+      border: 1px solid #c8c8c8;
+      position: relative;
+      top: 16px;
+      margin-bottom: 14px;
+      width: 28px;
+      height: 28px;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      font-weight: 900 !important;
+    }
+
+    body .ui-steps .ui-steps-item {
+      background-color: transparent;
+      text-align: center;
+      margin-left: 70px !important;
+    }
+
+    body .ui-steps .ui-steps-item .ui-menuitem-link:focus {
+      outline: 0 none;
+      outline-offset: 0;
+      box-shadow: unset !important;
+    }
+
+    .white-Gradient .username-input input.ng-tns-c80-3.ui-inputtext.ui-widget.ui-state-default.ui-corner-all.ng-star-inserted {
+      font-family: TahomaRegular;
+      font-size: 18px;
+      color: #282828;
+      background-color: #F4F8F9;
+      border: unset;
+    }
+
+    /* STEP WIZARD */
+  </style>
+  <meta charset="utf-8">
+  <title>ExtensionBuyer</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <app-root></app-root>
+
+</body>
+
+</html>

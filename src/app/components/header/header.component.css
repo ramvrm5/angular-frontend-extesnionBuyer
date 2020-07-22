@@ -1,0 +1,134 @@
+
+/* BLUE GRADIENT HOME COMPONENT */
+.blue-Gradient{
+    background-image: linear-gradient(to right, #2A0E8F , #261596,#1E22A1,#034CC7,#034CC7);
+}
+
+.blue-Gradient .image1 img{
+    max-width: 100%;
+    max-height: 100%;
+	float:right;
+}
+.blue-Gradient .image1{
+    top: -79px;
+}
+.blue-Gradient .explore-extension-text .first{
+    font-family:TahomaRegular !important;
+    font-size: 46px;
+    font-weight: 900;
+    color: white;
+}
+.blue-Gradient .explore-extension-text .first1{
+    font-family:TahomaRegular !important;
+    font-size: 46px;
+    font-weight: 300;
+    color: white;
+}
+.blue-Gradient .explore-extension-text .second{
+    font-family:TahomaRegular !important;
+    font-size:22px;
+    font-weight: 300;
+    color: white;
+}
+
+.blue-Gradient .serchBar  #myInput::placeholder{
+    color:white;
+    font-family:TahomaRegular !important;
+    font-size: 15px;
+}
+.blue-Gradient .serchBar .fa{
+    position:absolute;
+    left:18px;
+    top:20%;
+    font-size:22px;
+    color:white;
+ }
+.blue-Gradient .serchBar   #myInput {
+    background: transparent;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: none;
+    border-bottom:1px solid white;
+    margin-bottom: 12px;
+    outline:none;
+}
+.blue-Gradient .serchBar input{
+    color: #ffffff;
+    font-family:TahomaRegular !important;
+    font-size: 18px;
+}
+.blue-Gradient .mt-n5{
+    margin-top: -9rem!important;
+}
+/* BLUE GRADIENT HOME COMPONENT */
+
+/* BLUE GRADIENT LOGIN/SIGNUP COMPONENT */
+.blue-Gradient-login{
+    background-image: linear-gradient(to right, #2A0E8F , #261596,#1E22A1,#034CC7,#034CC7);
+}
+.blue-Gradient-login .image1 img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.blue-Gradient-login .image1 img{
+    margin-top: 30px;
+    opacity: 0.5;
+}
+/* BLUE GRADIENT LOGIN/SIGNUP COMPONENT */
+
+/* BLUE GRADIENT LISTING COMPONENT */
+.blue-Gradient-listing{
+    background-image: linear-gradient(to right, #2A0E8F , #261596,#1E22A1,#034CC7,#034CC7);
+}
+.blue-Gradient-listing .chromeExtension-text{
+    font-family:TahomaRegular;
+}
+.blue-Gradient-listing .myTravel-planner{
+    font-family:TahomaBold;
+    font-size: 40px;
+}
+.blue-Gradient-listing .button button.view-in-store{
+    font-family:TahomaBold;
+    background-color:#B726A7;
+    font-size: 22px;
+    border-radius: 28px;
+    border: unset;
+}
+.blue-Gradient-listing .button button.message-seller{
+    font-family:TahomaBold;
+    background-color:#290A6B;
+    font-size: 22px;
+    border-radius: 28px;
+    border: unset;
+}
+/* BLUE GRADIENT LISTING COMPONENT */
+
+/* BLUE GRADIENT CATEGORY-LIST COMPONENT */
+.blue-Gradient-catList{
+    background-image: linear-gradient(to right, #2A0E8F , #261596,#1E22A1,#034CC7,#034CC7);
+}
+.blue-Gradient-catList .image1 img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.blue-Gradient-catList .image1 img{
+    margin-top: 30px;
+}
+/* BLUE GRADIENT CATEGORY-LIST COMPONENT */
+@media only screen and (max-width: 767px) {
+	.blue-Gradient .image1 img{
+		width: 50%;
+	}
+	.login-banner{
+		display:none;
+	}
+}
+@media only screen and (max-width: 550px) {
+	.blue-Gradient .image1 img{
+		visibility: hidden;
+	}
+	.firstnavbar .nav-link.aristaAlertnate{
+		margin:0 auto !important;
+	}
+}

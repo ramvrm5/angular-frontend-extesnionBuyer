@@ -1,0 +1,97 @@
+<div class="container-fluid">
+	<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-square-spin" [fullScreen]="true">
+		<p style="color: white"> Loading... </p>
+	</ngx-spinner>
+	<app-header></app-header>
+	<div class="row row2-vh-50 white-Gradient">
+		<div class="col-xs-12 col-md-10 mx-auto mt-2 mb-5 extension-type-container">
+			<div class="row mt-4">
+				<div *ngFor="let items of viewAllType_extention;let i=index"
+					class="col-xs-12 col-md-4 col-sm-6 row-2-table p-1 mt-3">
+					<div class="row">
+						<div class="col-12 p-0">
+							<img class="mr-2 mb-2 mb-2 no-groups-img"
+								src="assets/images/{{items.type=='Mozila'?'firefox':items.type | lowercase}}.png" />
+							<span  style="text-transform: capitalize;" class="t-bold ml-1">{{items.type=='Mozila'?'firefox':items.type | lowercase}} Extensions</span>
+						</div>
+					</div>
+					<div class="row border-gray rounded">
+						<div class="col-12 p-0">
+							<table class="table table-striped text-center mb-0">
+								<thead>
+									<tr>
+										<th scope="col">Name</th>
+										<th scope="col">Category</th>
+										<th scope="col">Users</th>
+									</tr>
+								</thead>
+								<tbody>
+									<ng-container *ngFor="let itemsofList of items.listing;let j=index">
+										<tr>
+											<td style="cursor: pointer; text-transform: capitalize;"[routerLink]="['/extension-detail']" [queryParams]="{id:itemsofList.id}">{{itemsofList.visibilty == '0'?itemsofList.product_name?itemsofList.product_name:'----':'PRIVATE LISTING'}}</td>
+											<td style="text-transform: capitalize;">{{itemsofList.categories[0].category_name?itemsofList.categories[0].category_name:'----'}}</td>
+											<td style="text-transform: capitalize;">{{itemsofList.total_users?itemsofList.total_users:'-----'}}</td>
+										</tr>
+									</ng-container >
+								</tbody>
+							</table>
+						</div>
+						<button [routerLink]="['/browse/extensions']" [queryParams]="{type:items.type}"
+							class="btn m-4 btn-primary btn-block btn-md rounded-pill" style="text-transform: capitalize;">View All {{items.type}}
+							Extensions</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row row3-vh-50 gray-Gradient latest-extension-container">
+		<div class="col-xs-12 col-md-10 mx-auto mt-4 mb-5">
+			<div class="row mb-3">
+				<div class="col-lg-6 first-row mt-5">
+					<p>New Extensions</p>
+				</div>
+			</div>
+			<div class="row">
+				<div *ngFor="let items of viewAllCategory_newExtension" class="col-xs-12 col-md-4 col-sm-6 p-0 pr-2 mt-2">
+					<div class="col-xs-12 p-0 white-Gradient">
+						<div class="row p-3">
+							<div class="col-sm-4 background-gray p-1">
+								<img class="mx-auto d-block" src="assets/images/{{items.type=='Mozila'?'firefox':items.type | lowercase}}.png" />
+							</div>
+							<div class="col-sm-8 text p-0 pl-2">
+								<p [routerLink]="['/extension-detail']" [queryParams]="{id:items.id}"
+								style="text-transform: capitalize;" class="bold-tt mb-0 number1">{{items.visibilty == '0'?items.product_name:"PRIVATE LISTING"}}</p>
+								<p style="text-transform: capitalize;" class="light-tt">{{items.categories[0].category_name}}</p>
+								<img src="assets/images/5stars.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-4 mx-auto mt-5 mb-3 p-0">
+				<button [routerLink]="['/browse/extensions']" [queryParams]="{type:'all'}"
+					class="btn btn-muted btn-block btn-lg view-more-extension">VIEW MORE EXTENSIONS</button>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="row row4-vh-50 blue-small-gradient">
+		<div class="col-lg-10 mx-auto mt-1 mb-1">
+			<div class="row text-center">
+				<div class="col-md-4 p-2 mt-4 mb-4 gray-border-right">
+					<p class="bold-tt m-0">{{extensionSold}} Extensions Sold</p>
+				</div>
+				<div class="col-md-4 p-2 mt-4 mb-4 gray-border-right">
+					<p class="bold-tt m-0">{{sold?'$ '+sold:'$ 0'}} Sold</p>
+				</div>
+				<div class="col-md-4 p-2 mt-4 mb-4">
+					<p class="bold-tt m-0">{{buyer}} Buyers</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<app-footer></app-footer>
+</div>

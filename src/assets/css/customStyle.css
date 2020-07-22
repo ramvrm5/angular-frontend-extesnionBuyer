@@ -1,0 +1,16 @@
+@font-face {
+    font-family:TahomaRegular;
+    src: url(../../assets/font/TahomaRegular.ttf) format("opentype");
+}
+@font-face {
+    font-family:TahomaBold;
+    src: url(../../assets/font/TahomaBold.ttf) format("opentype");
+}
+@font-face {
+    font-family:Arista20Alternate;
+    src: url(../../assets/font/Arista20Alternate.ttf) format("opentype");
+}
+@font-face {
+    font-family:Arista20light;
+    src: url(../../assets/font/Arista20light.ttf) format("opentype");
+}

@@ -1,0 +1,54 @@
+<div class="container-fluid p-0">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-square-spin" [fullScreen]="true">
+        <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <app-navigationbar></app-navigationbar>
+    <div class="row gray-Gradient">
+        <div class="col-lg-10 col-md-11 mx-auto mt-3 mb-5 white-Gradient">
+			<div class="row">
+				<div class="col-md-3 p-3">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<img class="img-thumbnail" src="{{profileImage | image250x250}}">
+						</div>
+						<div class="col-sm-12 mt-2 mb-2 font-500">	
+							<img class="country" src="https://www.countryflags.io/{{flag_code}}/flat/24.png"><span class="region ml-1">{{State}}, {{country}}</span>
+						</div>
+						<div class="col-sm-12 mt-2 mb-2 font-500">	
+							<i class="fa fa-calendar"></i><span class="joined_on ml-3">Joined {{joined_date | date: 'MMMM, yyyy'}}</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-9 p-3">
+					<div class="row p-0">
+						<div class="col-sm-12 profile-title">
+							<h3 class="name">{{fullName}}</h3> <h3 class="username ml-1">@{{username}}</h3>
+						</div>
+					</div>
+					<div class="row p-0">						
+						<div class="col-sm-1 mt-2 mb-2 paragraph ">	
+							<span class="mr-1 listing-count">{{total_listing}}</span> 
+						</div>
+						<div class="col-sm-5 mt-2 mb-2 paragraph ">	
+							<span class="listing-title">Total Listings</span> 
+						</div>											
+						<div class="col-sm-1 mt-2 mb-2 paragraph ">	
+							<span class="mr-1 listing-count">{{sold_Listing}}</span> 
+						</div>
+						<div class="col-sm-5 mt-2 mb-2 paragraph">	
+							<span class="listing-title">Sold Listings</span> 
+						</div>
+					</div> 
+				</div>
+			</div>
+        </div>
+    </div>
+    
+	<div class="row gray-Gradient">
+        <div class="col-lg-10 col-md-11 mx-auto mt-1 mb-5 white-Gradient">
+            <h4 class="p-4">Reviews</h4>
+        </div>
+    </div>
+    
+	<app-footer></app-footer>
+</div>

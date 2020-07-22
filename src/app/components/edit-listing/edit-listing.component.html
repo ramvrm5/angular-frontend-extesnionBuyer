@@ -1,0 +1,368 @@
+<div class="container-fluid p-0">
+    <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-square-spin" [fullScreen]="true">
+        <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <app-header></app-header>
+    <app-navigationbar></app-navigationbar>
+    <div class="row gray-Gradient">
+        <div class="col-lg-10 col-md-11 mx-auto mt-3 mb-5 white-Gradient">
+            <div class="col-lg-10 col-md-10 mx-auto mt-3 mb-2">
+                <p-messages [(value)]="msgs"></p-messages>
+                <P class="add_extension_text mt-4">Add Extension</P>
+                <p-steps [model]="steps" [(activeIndex)]="activeIndex" (activeIndexChange)="onChangeWizard($event,'')"
+                    [readonly]="true"></p-steps>
+                <div *ngIf="basic" class="row mt-3">
+                    <div class="col-lg-12 col-md-12">
+                        <!-- BASIC DETAILS  -->
+                        <form 	[formGroup]="data" (ngSubmit)="submit_step1()">
+							<div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Extension Type <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-9 username-input">
+									<select (change)="onChangeExtensionType($event)" class="form-control"
+										id="extension_type" formControlName="extension_type" name="extension_type"
+										[ngClass]="classForValidation('extension_type')">
+										<option *ngFor="let extension_type_List of extension_type"
+											value="{{extension_type_List.id}}">{{extension_type_List.category_name}}
+										</option>
+									</select>
+									<div *ngIf="submitted && f.extension_type.errors" class="invalid-feedback">
+										<div *ngIf="f.extension_type.errors.required">Extension Type is required</div>
+									</div>
+									<div *ngIf="submitted && !f.extension_type.errors" class="valid-feedback">
+										<div>Extension Type is correct</div>
+									</div>
+								</div>
+                            </div>
+							
+							<div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Extension Name <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-9 username-input">
+									<input class="form-control" type="text" formControlName="extension_name"
+										name="extension_name" class="form-control"
+										[ngClass]="classForValidation('extension_name')" />
+									<!-- <label
+										style="font-family: TahomaRegular;font-size: 14px;color: #6F6CCE;float: left;">Name
+										,will be displayed to customers.</label> -->
+									<div *ngIf="submitted && f.extension_name.errors" class="invalid-feedback">
+										<div *ngIf="f.extension_name.errors.required">Extension Name is required</div>
+									</div>
+									<div *ngIf="submitted && !f.extension_name.errors" class="valid-feedback">
+										<div>Extension Name is correct</div>
+									</div>
+								</div>
+							</div>
+							
+							<div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Description <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-9 username-input">
+									<textarea class="form-control" id="" name="description" rows="4"
+										formControlName="description" 
+										[ngClass]="classForValidation('description')"></textarea>
+									<div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+										<div *ngIf="f.description.errors.required">Description is required</div>
+										<div *ngIf="f.description.errors.minlength">Description must be at least 50 characters</div>
+									</div>
+									<div *ngIf="submitted && !f.description.errors" class="valid-feedback">
+										<div>Description is correct</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Store URL <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-9 username-input">
+									<input class="form-control" type="text" name="store_url" class="form-control"
+										formControlName="store_url" [ngClass]="classForValidation('store_url')" />
+									<!-- <label
+										style="font-family: TahomaRegular;font-size: 14px;color: #6F6CCE;float: left;">URL
+										Name can have hyoen(-), space(), number(0-9) but not other special</label>
+									<label
+										style="font-family: TahomaRegular;font-size: 14px;color: #6F6CCE;float: left;">characters.</label>
+									<label
+										style="font-family: TahomaRegular;font-size: 14px;color: #6F6CCE;float: left;">This
+										will be used for links and URLs.</label> -->
+									<div *ngIf="submitted && f.store_url.errors" class="invalid-feedback">
+										<div *ngIf="f.store_url.errors.required">Store Url is required</div>
+										<div *ngIf="f.store_url.errors.pattern">Store Url i.e ((https://www.google.com))
+										</div>
+									</div>
+									<div *ngIf="submitted && !f.store_url.errors" class="valid-feedback">
+										<div>Store Url is correct</div>
+									</div>
+								</div>
+                            </div>
+							
+							<div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Extension Category <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-9 username-input">
+									<p-multiSelect [options]="extension_category_options" formControlName="extension_category"
+										[ngClass]="classForValidation('extension_category')"
+										(onChange)="onChangeExtensionName($event)" [defaultLabel]="defaultLabel"></p-multiSelect>
+									<div *ngIf="submitted && f.extension_category.errors" class="invalid-feedback">
+										<div *ngIf="f.extension_category.errors.required">Extension Category is required
+										</div>
+									</div>
+									<div *ngIf="submitted && !f.extension_category.errors" class="valid-feedback">
+										<div>Extension Category is correct</div>
+									</div>
+								</div>
+							</div>
+
+                            <div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Website <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-9 username-input">
+									<input class="form-control" type="text" name="website" class="form-control"
+										formControlName="website" [ngClass]="classForValidation('website')" />
+									<div *ngIf="submitted && f.website.errors" class="invalid-feedback">
+										<div *ngIf="f.website.errors.required">website is required
+										</div>
+										<div *ngIf="f.website.errors.pattern">website Pattern i.e (https://www.google.com)
+										</div>
+									</div>
+									<div *ngIf="submitted && !f.website.errors" class="valid-feedback">
+										<div>website is correct</div>
+									</div>
+								</div>
+							</div>
+
+                            <div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Publish Date <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-9 username-input">
+									<p-calendar formControlName="publish_date" (onSelect)=dateSelector($event)
+										dateFormat="dd/mm/yy" hourFormat="12" [ngClass]="classForValidation('publish_date')"
+										[showIcon]="true"></p-calendar>
+									<div *ngIf="submitted && f.publish_date.errors" class="invalid-feedback">
+										<div *ngIf="f.publish_date.errors.required">Publish Date is required
+										</div>
+									</div>
+									<div *ngIf="submitted && !f.publish_date.errors" class="valid-feedback">
+										<div>Publish Date is correct</div>
+									</div>
+								</div>
+							</div>
+                            
+							<div class="col-lg-12 mx-auto button-next">
+                                <button class="btn btn-primary btn-lg">NEXT</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <!-- ANALYTICS -->
+                <div *ngIf="analytics" class="row mt-3">
+                    <div class="col-lg-12 col-md-12">
+                        <form>
+
+                            <div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Total User <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-8 col-md-8 username-input">
+									<input class="form-control" type="number" [(ngModel)]="data_1.total_user"
+										name="total_user" />
+									<div *ngIf="total_user_validation" style="color: red;">
+										Total User is required
+									</div>
+								</div>
+							</div>
+
+                            <div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Statistics Images <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-8 col-md-8 username-input">
+									<img (click)="showStatisticImagesDialog()" src={{src_stats_default_image_icon}} />
+									<div *ngIf="stats_image_validation" style="color: red;">
+										Atleast one statistic image is required
+									</div>
+								</div>
+							</div>
+							
+                            <div *ngIf="stats_image_boolean" class="row mb-3">
+                                <div *ngFor="let stats_img of stats_image_array;let i=index" class="col-lg-4 h-25">
+                                    <img class="w-100 h-50" src="{{stats_img | image250x250}}" /><span (click)="deleteImage(stats_img,'Stats',i)" class="close">&times;</span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Userbase</label>
+								</div>								
+								<div class="col-lg-9 col-md-9 username-input mb-4">									
+									<ng-container *ngFor="let number of userbase;let i=index">
+										<div class="row mb-4">
+											<div class="col-lg-5 label1">
+												<select (change)="onChangeExtensionType($event)" class="form-control"
+												id="country" [(ngModel)]="number.country_id" name="select_{{i}}">
+												<option value="">Select Country</option>
+                                                <option *ngFor="let country_name of country_list"
+                                                    value="{{country_name.country_id}}">{{country_name.name}}
+                                                </option>
+                                            </select>
+											</div>
+											<div class="col-lg-5 label1">
+												<input class="form-control" type="number" placeholder="Total Users" name="user_{{i}}" id="user"
+													[(ngModel)]="number.user" />
+											</div>
+											<div class="col-lg-1 plus_minus">
+												<a (click)="remove(i,userbase)" tooltip="Remove Row" placement="top"
+													class="text-secondary"><i class="fa fa-minus-circle"
+														aria-hidden="true"></i></a>
+											</div>
+										</div>
+									</ng-container>
+									<div class="row mb-4">
+										<div class="col-lg-12 plus_minus">
+											<a (click)="add()" tooltip="Add Row" placement="top" class="text-secondary"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add More</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row mb-4">
+								<div class="col-lg-6 mx-auto button-next">
+									<button type="button" (click)="step_1()"
+										class="btn btn-primary btn-lg w-50">PREVIOUS</button>
+								</div>
+								<div class="col-lg-6 mx-auto button-next">
+									<button type="button" (click)="submit_step2()"
+										class="btn btn-primary btn-lg w-50">NEXT</button>
+								</div>
+							</div>
+                        </form>
+                    </div>
+                </div>
+                <!-- UPLOAD -->
+                <div *ngIf="upload" class="row mt-3">
+                    <div class="col-lg-12 col-md-12">
+                        <form>
+
+                            <div class="row mb-4">
+								<div class="col-lg-3 label1">
+                                <label>Upload Banner images <span class="span">*</span></label>
+								</div>
+								<div class="col-lg-7 col-md-7 mb-5 username-input">
+									<img (click)="showBannerImagesDialog()" src={{src_banner_default_image_icon}} />
+									<div *ngIf="banner_image_validation" style="color: red;">
+										Banner Image is required
+									</div>
+								</div>
+							</div>
+							<div *ngIf="banner_image_boolean" class="row mb-3">
+								<div *ngFor="let banner_img of banner_image_array;let i=index" class="col-lg-4 h-25">
+									<img class="w-100 h-50" src="{{banner_img | image250x250}}" /><span (click)="deleteImage(banner_img,'Banner',i)" class="close">&times;</span>
+								</div>
+							</div>
+							<div class="row mb-4">
+								<div class="col-lg-6 mx-auto button-next">
+									<button type="button" (click)="step_2()"
+										class="btn btn-primary btn-lg w-50">PREVIOUS</button>
+								</div>
+								<div class="col-lg-6 mx-auto button-next ">
+									<button type="button" (click)="submit_step3()"
+										class="btn btn-primary btn-lg w-50">NEXT</button>
+								</div>
+							</div>
+                        </form>
+                    </div>
+                </div>
+                <!-- UPLOAD -->
+                <div *ngIf="review_submit" class="row mt-3">
+                    <div class="col-lg-12 col-md-12">
+                        <form [formGroup]="data_3" (ngSubmit)="submit_step4()">
+							<div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Price <span class="span">*</span></label>
+								</div>
+								
+								<div class="col-lg-2 col-md-2 username-input">
+									<select (change)="onChangeExtensionType($event)" class="form-control" id="currency" formControlName="currency" name="currency">
+										<option value="usd" selected >USD</option>
+										<option value="euro">EURO</option>
+									</select>
+								</div>
+								
+								<div class="col-lg-7 col-md-7 username-input">
+									<input class="form-control" type="number" name="price" class="form-control"
+										formControlName="price" min="1" [ngClass]="classForValidation_1('price')" />
+									<div *ngIf="submitted_1 && g.price.errors" class="invalid-feedback">
+										<div *ngIf="g.price.errors.required">Price is required
+										</div>
+										<div *ngIf="g.price.errors.pattern">Price is number or decimal i.e ( 77/7.23 )
+										</div>
+									</div>
+									<div *ngIf="submitted_1 && !g.price.errors" class="valid-feedback">
+										<div>Price is correct</div>
+									</div>
+								</div>
+							</div>
+                            <div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Negotiable</label>
+								</div>
+								<div class="col-lg-1 col-md-1 username-input pl-0">
+									<div class="custom-control custom-checkbox h-75">
+										<input type="checkbox" formControlName="negotiable" name="negotiable"
+											class="form-check-input largerCheckbox" id="exampleCheck1">
+									</div>
+								</div>
+                            </div>
+							<div class="row mb-4">
+								<div class="col-lg-3 label1">
+									<label>Private</label>
+								</div>
+								<div class="col-lg-8 col-md-8 username-input mb-4">
+									<div class="custom-control custom-switch">
+										<input type="checkbox" class="custom-control-input" formControlName="public_private" id="customSwitch1" name="public_private">
+										<label class="custom-control-label" for="customSwitch1"></label>
+									</div>
+								</div>
+							</div>
+							<div class="row mb-4">
+								<div class="col-lg-6 mx-auto button-next">
+									<button type="button" (click)="step_3()"
+										class="btn btn-primary btn-lg w-50">PREVIOUS</button>
+								</div>
+								<div class="col-lg-6 mx-auto button-next ">
+									<button class="btn btn-primary btn-lg w-50">Submit</button>
+								</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</div>
+
+
+<p-dialog [(visible)]="displayStatsImagesModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <h2>Add Statistic Images</h2>
+    <p class="mb-1">Max.of 2mb. Recommended size: 280px 280px</p>
+    <p-fileUpload name="uploadimage[]" url="http://trigvent.com/extbuyer/api/product/uploadimage/stats"
+        (onUpload)="onUploadStatisticImages($event)" multiple=true [fileLimit]="statistic_fileLimit" accept="image/*" maxFileSize="1000000"
+        previewWidth="100" chooseLabel="Click or drag here" uploadLabel="Upload" showCancelButton>
+    </p-fileUpload>
+</p-dialog>
+<p-dialog [(visible)]="displayBannerImagesModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000">
+    <h2>Add Banner Images</h2>
+    <p class="mb-1">Max.of 2mb. Recommended size: 280px 280px</p>
+    <p-fileUpload name="uploadimage[]" url="http://trigvent.com/extbuyer/api/product/uploadimage/banner"
+        (onUpload)="onUploadBannerImages($event)" multiple=true [fileLimit]="banner_fileLimit" accept="image/*" maxFileSize="1000000"
+        previewWidth="100" chooseLabel="Click or drag here" uploadLabel="Upload" showCancelButton>
+    </p-fileUpload>
+</p-dialog>

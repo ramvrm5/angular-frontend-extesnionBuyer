@@ -1,0 +1,30 @@
+ .firstnavbar a{
+    font-family:TahomaRegular;
+    font-size: 15px;
+    color: white;
+}
+
+ .firstnavbar  .aristaAlertnate{
+    font-family:Arista20Alternate !important;
+    font-size: 34px;
+    color: white;
+}
+
+ .firstnavbar  .aristaLight{
+    font-family:Arista20light !important;
+    font-size: 34px;
+    color: white;
+}
+
+ nav ul li a{
+    font-family:TahomaRegular;
+    font-size: 16px;
+    color: white;
+}
+ nav ul li a:hover{
+    border-bottom: 2px  solid #FB009D;
+}
+ .bg-light-opacity{
+    background-color: #2e0365a8;
+    z-index: 9;
+}

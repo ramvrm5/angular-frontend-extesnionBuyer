@@ -1,0 +1,63 @@
+/* WHITE GRADIENT */
+.white-Gradient{
+    background-color: white;
+}
+.white-Gradient .Login-Text p{
+    font-family: TahomaBold;
+    font-size:27px;
+}
+
+.white-Gradient .orLoginAccess p{
+    font-family: TahomaRegular;
+    font-size:17px;
+    color: #777676;
+}
+
+.white-Gradient .teamscondition p{
+    font-family: TahomaRegular;
+    font-size:17px;
+    color: #42425B;
+}
+
+
+.white-Gradient .teamscondition p a{
+    font-family: TahomaRegular;
+    font-size:18px;
+    color: #00B0DF;
+}
+.white-Gradient .username-input input{
+    font-family: TahomaRegular;
+    font-size:20px;
+    color: #787878;
+}
+.white-Gradient .buttonfacebook button{
+    color:white;
+    font-family: TahomaRegular;
+    font-size:20px;
+    background-color:#3B5998;
+    border-radius: unset;
+    border-color: #007bff00;
+}
+.white-Gradient .buttontwitter button{
+    color:white;
+    font-family: TahomaRegular;
+    font-size:20px;
+    background-color:#4285F4;
+    border-radius: unset;
+    border-color: #007bff00;
+}
+
+.white-Gradient .buttonfacebook i{
+    font-size:27px;
+}
+.white-Gradient .buttontwitter i{
+    font-size:27px;
+}
+
+.white-Gradient .buttonSignIn button{
+    color:white;
+    font-family: TahomaBold;
+    font-size:22px;
+    background-color:#0151CB;
+}
+/* WHITE GRADIENT */

@@ -1,0 +1,82 @@
+<div class="container-fluid">
+  <ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-square-spin" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+  </ngx-spinner>
+  <app-header></app-header>
+
+  <div class="row white-Gradient">
+    <div class="col-lg-10 mx-auto mt-5 mb-5">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="p-4 border bg-light">
+            <p class="border-bottom heading-category">Categories</p>
+            <div class="list-group">
+              <a href="javascript:void(0);" (click)="onChange('all')" id="all"
+                class="list-group-item list-group-item-action mb-1 border">All
+                extensions</a>
+			  <a href="javascript:void(0);" (click)="onChange('Chrome')" id="Chrome"
+                class="list-group-item list-group-item-action mb-1 border">Chrome
+                extensions</a>
+              <a href="javascript:void(0);" (click)="onChange('Mozila')" id="Mozila"
+                class="list-group-item list-group-item-action mb-1 border">Mozila
+                extensions</a>
+              <a href="javascript:void(0);" (click)="onChange('Opera')" id="Opera"
+                class="list-group-item list-group-item-action mb-1 border">Opera
+                extensions</a>
+              <a href="javascript:void(0);" (click)="onChange('Safari')" id="Safari"
+                class="list-group-item list-group-item-action mb-1 border">Safari
+                extensions</a>
+              <a href="javascript:void(0);" (click)="onChange('Edge')" id="Edge"
+                class="list-group-item list-group-item-action mb-1 border">Explore
+                extensions</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 mb-4">
+			<div class="row">
+				<div class="col-sm-6 text-left sub-heading-text">
+					Total Results : {{number}}
+				</div>
+				<div class="col-sm-6 text-right sub-heading-text">
+					({{listItemPublic.length}} Public/{{listItemPrivate.length}} Private)
+				</div>
+			</div>
+          <p-dataView #dv [value]="listItem" [paginator]="true" [rows]="6" paginatorPosition="bottom" layout="grid" [sortField]="sortField" [sortOrder]="sortOrder" filterBy="product_name,total_users,price">
+            <p-header>
+              <div class="ui-helper-clearfix">
+                  <div class="ui-g">
+                      <div class="ui-g-12 ui-md-4">
+                          <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange($event)" [style]="{'min-width':'140px'}"></p-dropdown>
+                      </div>
+                      <div class="ui-g-6 ui-md-4 filter-container">
+                          <div style="position:relative">
+                              <input type="search" pInputText placeholder="Search..." (keyup)="onchangeInput($event)" name="search_input" [(ngModel)]="search_input" (input)="dv.filter($event.target.value)">
+                          </div>
+                      </div>
+                      <div class="ui-g-6 ui-md-4" style="text-align:right">
+                          <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                      </div>
+                  </div>
+              </div>
+          </p-header>
+            <ng-template let-product pTemplate="gridItem" let-rowIndex="rowIndex">
+              <div class="col-lg-4 border mt-2 p-0">
+                <img class="w-100" src="{{product.images.length > 0 && product.
+                    visibilty == '0'?(product.images[0].image_path | image250x250 ):profile_image}}" />
+                <div class="text-center mt-2">
+                  <p class="list-bold mb-0">Name: <span class="list-light">{{product.
+                    visibilty == '1'?'PRIVATE LISTING':product.product_name}}</span></p>
+                  <p class="list-bold mb-0">Total Users: <span class="list-light">{{product.total_users}}</span></p>
+                  <p class="list-bold mb-0">Asking Price: <span class="list-light">{{product.price}}</span></p>
+                  <button [routerLink]="['/extension-detail']"
+					[queryParams]="{id:product.product_id}" class="btn btn-primary btn-sm w-100 view-listing mt-3">VIEW LISTING</button>
+                </div>
+              </div>
+            </ng-template>
+          </p-dataView>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

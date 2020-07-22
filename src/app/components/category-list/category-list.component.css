@@ -1,0 +1,46 @@
+/* WHITE GRADIENT */
+.white-Gradient{
+    background-color: white;
+}
+.white-Gradient .heading-category{
+    font-family: TahomaBold;
+    font-size:23px;
+    color: #505050;
+}
+.white-Gradient .list-group a{
+    font-family: TahomaRegular;
+    font-size:18px;
+    color: #B3B2B7;
+}
+.white-Gradient .bg-light{
+    height:719px;
+}
+.link{
+    background-color: #251172;
+    color: white !important;
+    font-family:TahomaBold !important;
+}
+.white-Gradient .col-lg-8 .border p.list-bold{
+    font-family: TahomaRegular;
+    font-size:14px;
+    color: #505050;
+}
+.white-Gradient .col-lg-8 .border p span.list-light{
+    font-family: TahomaRegular;
+    font-size:14px;
+    color: #BBBBBB;
+}
+.white-Gradient .col-lg-8 .border button.view-listing{
+    font-family: TahomaRegular;
+    font-size:15px;
+    background-color: #270D6E;
+    border:unset;
+    color: #ffffff;
+}
+.white-Gradient nav ul.pagination button{
+    width: 130px;
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #BBBBBB;
+}
+/* WHITE GRADIENT */
